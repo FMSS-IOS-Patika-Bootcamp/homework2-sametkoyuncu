@@ -11,7 +11,7 @@ struct DummyData {
         Category(id: 1, name: "Dünya"),
         Category(id: 2, name: "Finans"),
         Category(id: 3, name: "Bilim & Teknoloji"),
-        Category(id: 5, name: "Spor")
+        Category(id: 4, name: "Spor")
     ]
     
     static let news =  [

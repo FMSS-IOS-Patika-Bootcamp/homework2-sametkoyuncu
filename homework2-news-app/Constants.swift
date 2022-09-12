@@ -9,7 +9,7 @@ struct K {
     static let logo = "logo"
     static let categoryLogo = "categoryLogo"
     
-    static let categoryNotification = "CategoryNotification"
+    static let selectedCategoryNotification = "CategoryNotification"
     
     // custom cell properties
     struct Cell {
