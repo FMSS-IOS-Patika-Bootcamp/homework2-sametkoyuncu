@@ -83,31 +83,32 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LmJ-jw-RjP">
-                                <rect key="frame" x="20" y="88" width="364" height="200"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LmJ-jw-RjP">
+                                <rect key="frame" x="0.0" y="88" width="414" height="220"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="81C-Y8-FIP"/>
+                                    <constraint firstAttribute="height" constant="220" id="81C-Y8-FIP"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem Ipsum Dolor Sit Amet" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XgO-k3-JHj">
-                                <rect key="frame" x="30" y="308" width="354" height="26.5"/>
+                                <rect key="frame" x="30" y="328" width="354" height="26.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mfs-kg-RMa">
-                                <rect key="frame" x="30" y="354.5" width="354" height="20.5"/>
+                                <rect key="frame" x="30" y="374.5" width="354" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a7W-Gw-pmv">
-                                <rect key="frame" x="107" y="455" width="200" height="50"/>
-                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <rect key="frame" x="107" y="802" width="200" height="50"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="ORK-Vi-uur"/>
                                     <constraint firstAttribute="width" constant="200" id="xpK-lK-J4C"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Devamını oku..">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -117,17 +118,17 @@
                         <viewLayoutGuide key="safeArea" id="gYM-ZO-jNB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="a7W-Gw-pmv" firstAttribute="top" secondItem="mfs-kg-RMa" secondAttribute="bottom" constant="80" id="05R-Se-Age"/>
                             <constraint firstAttribute="trailing" secondItem="446-bF-aZE" secondAttribute="trailing" id="8ct-z3-qsb"/>
                             <constraint firstItem="446-bF-aZE" firstAttribute="leading" secondItem="p81-ax-RLM" secondAttribute="leading" id="9UD-sQ-tcJ"/>
-                            <constraint firstItem="gYM-ZO-jNB" firstAttribute="trailing" secondItem="LmJ-jw-RjP" secondAttribute="trailing" constant="30" id="Byy-YZ-65E"/>
+                            <constraint firstItem="gYM-ZO-jNB" firstAttribute="trailing" secondItem="LmJ-jw-RjP" secondAttribute="trailing" id="Byy-YZ-65E"/>
                             <constraint firstItem="gYM-ZO-jNB" firstAttribute="trailing" secondItem="mfs-kg-RMa" secondAttribute="trailing" constant="30" id="CQV-bD-tPU"/>
                             <constraint firstItem="a7W-Gw-pmv" firstAttribute="centerX" secondItem="p81-ax-RLM" secondAttribute="centerX" id="D2j-S3-FF2"/>
                             <constraint firstItem="XgO-k3-JHj" firstAttribute="top" secondItem="LmJ-jw-RjP" secondAttribute="bottom" constant="20" id="GzW-7S-XE3"/>
                             <constraint firstItem="XgO-k3-JHj" firstAttribute="leading" secondItem="gYM-ZO-jNB" secondAttribute="leading" constant="30" id="I5T-0e-LaI"/>
-                            <constraint firstItem="LmJ-jw-RjP" firstAttribute="leading" secondItem="gYM-ZO-jNB" secondAttribute="leading" constant="20" id="KUR-9o-TXr"/>
+                            <constraint firstItem="LmJ-jw-RjP" firstAttribute="leading" secondItem="gYM-ZO-jNB" secondAttribute="leading" id="KUR-9o-TXr"/>
                             <constraint firstItem="gYM-ZO-jNB" firstAttribute="trailing" secondItem="XgO-k3-JHj" secondAttribute="trailing" constant="30" id="V4I-YB-8ea"/>
                             <constraint firstItem="446-bF-aZE" firstAttribute="top" secondItem="gYM-ZO-jNB" secondAttribute="top" id="Vg5-u9-hZR"/>
+                            <constraint firstItem="gYM-ZO-jNB" firstAttribute="bottom" secondItem="a7W-Gw-pmv" secondAttribute="bottom" constant="10" id="c17-FG-bie"/>
                             <constraint firstItem="mfs-kg-RMa" firstAttribute="top" secondItem="XgO-k3-JHj" secondAttribute="bottom" constant="20" id="e3e-Uy-zzU"/>
                             <constraint firstItem="mfs-kg-RMa" firstAttribute="leading" secondItem="gYM-ZO-jNB" secondAttribute="leading" constant="30" id="iWl-gP-rie"/>
                             <constraint firstItem="446-bF-aZE" firstAttribute="bottom" secondItem="gYM-ZO-jNB" secondAttribute="bottom" id="pTF-LG-eWX"/>
@@ -169,7 +170,7 @@
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
@@ -232,8 +233,8 @@
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
-        <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemPurpleColor">
             <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol NewsViewControllerDelegate {
+    func didNewsSelected(_ news: News)
+}
+
 class NewsViewController: UIViewController {
     // outlets
     @IBOutlet weak var collectionView: UICollectionView!
@@ -21,9 +25,12 @@ class NewsViewController: UIViewController {
     
     var filteredNews: [News] = []
     
-    // life cycle methods
+    var delegate: NewsViewControllerDelegate?
+
+    // lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // add notification center for getting selected category from the categories view controller
         let notificationCenter: NotificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(self.changeCategory(_:)), name: .categoryNotification, object: nil)
@@ -42,14 +49,14 @@ class NewsViewController: UIViewController {
           }
     }
     
-    // helper methods
-    // for register custom cell
+    // custom cell register
     func registerCell() {
         collectionView.register(.init(nibName: K.Cell.newsCellNibName, bundle: nil), forCellWithReuseIdentifier: K.Cell.newsCellId)
     }
     
     // load news when selected category changed
     func loadNews() {
+        // filter news
         filteredNews = DummyData.news.filter {
             if let selectedCategoryId = self.selectedCategory?.id, selectedCategoryId > 0  {
                 return $0.categoryId == selectedCategoryId
@@ -58,7 +65,7 @@ class NewsViewController: UIViewController {
             return true
         }
         
-        
+        // update navBar title
         if let selectedCategoryId = selectedCategory?.id, selectedCategoryId > 0 {
                 title = selectedCategory?.name
         } else {
@@ -72,13 +79,17 @@ class NewsViewController: UIViewController {
 // MARK: - collectionView delegate methods
 extension NewsViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-       
         
-        
-        
-        // go details screen
+        // target view controller
         let detailsViewController = self.storyboard?.instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
         
+        self.delegate = detailsViewController
+        // find selected new
+        let news = filteredNews[indexPath.row]
+        // set selected news
+        self.delegate?.didNewsSelected(news)
+        
+        // go details screen
         navigationController?.pushViewController(detailsViewController, animated: true)
     }
 }
@@ -107,7 +118,6 @@ extension NewsViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = collectionView.frame.width / 2 - 15
         let height = 320.0
-        
         
         return CGSize(width: width, height: height)
     }

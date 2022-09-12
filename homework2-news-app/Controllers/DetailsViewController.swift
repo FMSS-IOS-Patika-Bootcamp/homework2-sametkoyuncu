@@ -15,17 +15,15 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var readMoreButton: UIButton!
     
     // veriables
-    var selectedNews: News? {
-        didSet{
-            loadDetails()
-        }
-    }
+    var selectedNews: News?
     
     // lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       
+        readMoreButton.layer.cornerRadius = readMoreButton.frame.height / 2
+        
+        loadDetails()
     }
     
     // component actions
@@ -35,7 +33,6 @@ class DetailsViewController: UIViewController {
     
     // helper methods
     func loadDetails() {
-        print("geldi")
         DispatchQueue.main.async { [weak self] in
             if let image = self?.selectedNews?.imageName {
                 self?.newsImage.image = UIImage(named: image)
@@ -43,11 +40,17 @@ class DetailsViewController: UIViewController {
                 self?.newsImage.image = UIImage(named: "imageNotFound")
             }
             
-            self?.title = self?.title
+            self?.title = self?.selectedNews?.title
             self?.titleLabel.text = self?.selectedNews?.title
             self?.bodyLabel.text = self?.selectedNews?.body
-            
         }
     }
 
+}
+
+// MARK: - news delegate method
+extension DetailsViewController: NewsViewControllerDelegate {
+    func didNewsSelected(_ news: News) {
+        selectedNews = news
+    }
 }
