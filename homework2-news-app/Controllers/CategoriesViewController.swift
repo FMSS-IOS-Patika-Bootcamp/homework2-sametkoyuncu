@@ -9,14 +9,6 @@ import UIKit
 
 class CategoriesViewController: UIViewController {
     
-    let categories = [
-        Category(id: 1, name: "Gündem"),
-        Category(id: 2, name: "Ekonomi"),
-        Category(id: 3, name: "Teknoloji"),
-        Category(id: 4, name: "Bilim"),
-        Category(id: 5, name: "Spor")
-    ]
-    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -46,7 +38,7 @@ class CategoriesViewController: UIViewController {
         let newsVC: NewsViewController = segue.destination as! NewsViewController
         
         if let indexPath = tableView.indexPathForSelectedRow {
-            newsVC.selectedCategory = categories[indexPath.row]
+            newsVC.selectedCategory = DummyData.categories[indexPath.row]
         }
     }
 }
@@ -55,10 +47,15 @@ extension CategoriesViewController: UITableViewDelegate {
     // When the table cell is selected, push the selected category and present the news screen.
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // set notification for the selected category
-        let catagory: [String: Category] = ["category": categories[indexPath.row-2]]
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: K.categoryNotification), object: nil, userInfo: catagory)
-        // go news screen
-        navigationController?.popViewController(animated: true)
+        
+        if indexPath.row > 1 {
+            let catagory: [String: Category] = ["category": DummyData.categories[indexPath.row-2]]
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: K.categoryNotification), object: nil, userInfo: catagory)
+            // go news screen
+            navigationController?.popViewController(animated: true)
+        }
+        
+        
     }
     
 }
@@ -67,17 +64,17 @@ extension CategoriesViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // two custon cell + categories count
-        return categories.count + 2
+        return DummyData.categories.count + 2
     }
     // we have two custom cell and category cells
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // show custom logo cell
         if indexPath.row == 0 {
             
-            self.tableView.rowHeight = 130
+            self.tableView.rowHeight = 80
             
             let cell = tableView.dequeueReusableCell(withIdentifier: K.Cell.logoCellId, for: indexPath) as! LogoCell
-            cell.logoImage.image = UIImage(named: K.logo)
+            cell.logoImage.image = UIImage(named: K.categoryLogo)
             
             return cell
         }
@@ -96,7 +93,7 @@ extension CategoriesViewController: UITableViewDataSource {
         
         let cell = UITableViewCell()
         cell.textLabel?.font = UIFont.systemFont(ofSize: 24.0)
-        cell.textLabel?.text = categories[indexPath.row-2].name
+        cell.textLabel?.text = DummyData.categories[indexPath.row-2].name
         return cell
     }
     

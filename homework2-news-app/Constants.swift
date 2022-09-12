@@ -7,6 +7,7 @@
 
 struct K {
     static let logo = "logo"
+    static let categoryLogo = "categoryLogo"
     
     static let categoryNotification = "CategoryNotification"
     
