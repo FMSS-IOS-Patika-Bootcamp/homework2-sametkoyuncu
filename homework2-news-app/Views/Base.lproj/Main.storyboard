@@ -32,6 +32,45 @@
             </objects>
             <point key="canvasLocation" x="-1581" y="68"/>
         </scene>
+        <!--Categories-->
+        <scene sceneID="xt2-5C-1Kx">
+            <objects>
+                <viewController title="Categories" id="SVb-9R-pDf" customClass="CategoriesViewController" customModule="homework2_news_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hnA-8J-1Em">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="37B-Tl-nO6">
+                                <rect key="frame" x="20" y="88" width="394" height="808"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="f70-bn-aJk"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="37B-Tl-nO6" firstAttribute="top" secondItem="f70-bn-aJk" secondAttribute="top" id="0XI-9E-oIR"/>
+                            <constraint firstAttribute="bottom" secondItem="37B-Tl-nO6" secondAttribute="bottom" id="4jG-p8-9r7"/>
+                            <constraint firstItem="37B-Tl-nO6" firstAttribute="leading" secondItem="f70-bn-aJk" secondAttribute="leading" constant="20" id="7bH-SZ-3fs"/>
+                            <constraint firstItem="f70-bn-aJk" firstAttribute="trailing" secondItem="37B-Tl-nO6" secondAttribute="trailing" id="jad-mt-6Zi"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="OZK-ku-R1u">
+                        <barButtonItem key="leftBarButtonItem" title="Item" style="plain" id="DCr-JM-MFx">
+                            <imageReference key="image" image="xmark" catalog="system" symbolScale="large"/>
+                            <color key="tintColor" systemColor="labelColor"/>
+                            <connections>
+                                <action selector="closeMenuButtonPressed:" destination="SVb-9R-pDf" id="ibp-sm-PY7"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="37B-Tl-nO6" id="wJz-Sf-mTn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ks9-Ap-Iz1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="255" y="-559"/>
+        </scene>
         <!--Tüm Haberler-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -62,7 +101,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Tüm Haberler" largeTitleDisplayMode="always" id="d7F-5V-ben">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="xJu-ct-VQf">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="xJu-ct-VQf">
                             <imageReference key="image" image="line.3.horizontal" catalog="system" symbolScale="large" renderingMode="hierarchical">
                                 <hierarchicalColors>
                                     <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -78,6 +117,9 @@
                                 </hierarchicalColors>
                             </imageReference>
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <segue destination="SVb-9R-pDf" kind="push" id="O0C-xu-cVP"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
@@ -92,6 +134,7 @@
     </scenes>
     <resources>
         <image name="line.3.horizontal" catalog="system" width="128" height="64"/>
+        <image name="xmark" catalog="system" width="128" height="113"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -6,6 +6,19 @@
 //
 
 struct K {
-    static let newsCellNibName = "NewsCell"
-    static let newsCellId = "newsCellId"
+    static let logo = "logo"
+    
+    static let categoryNotification = "CategoryNotification"
+    
+    // custom cell properties
+    struct Cell {
+        static let newsCellNibName = "NewsCell"
+        static let newsCellId = "newsCellId"
+        
+        static let logoCellNibName = "LogoCell"
+        static let logoCellId = "logoCellId"
+        
+        static let headerCellNibName = "HeaderCell"
+        static let headerCellId = "headerCellId"
+    }
 }

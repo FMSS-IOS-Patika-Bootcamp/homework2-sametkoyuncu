@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F1541ECB28CF3F760081C331 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1541ECA28CF3F760081C331 /* CategoryModel.swift */; };
+		F1541ED028CF428C0081C331 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1541ECF28CF428C0081C331 /* CategoriesViewController.swift */; };
+		F1541ED328CF4C5D0081C331 /* LogoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1541ED128CF4C5D0081C331 /* LogoCell.swift */; };
+		F1541ED428CF4C5D0081C331 /* LogoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1541ED228CF4C5D0081C331 /* LogoCell.xib */; };
+		F1541ED728CF4FD90081C331 /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1541ED528CF4FD90081C331 /* HeaderCell.swift */; };
+		F1541ED828CF4FD90081C331 /* HeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1541ED628CF4FD90081C331 /* HeaderCell.xib */; };
+		F1541EDA28CF57890081C331 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1541ED928CF57890081C331 /* Notifications.swift */; };
 		F182BA5C28CE5C4B0041885D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F182BA5B28CE5C4B0041885D /* AppDelegate.swift */; };
 		F182BA5E28CE5C4B0041885D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F182BA5D28CE5C4B0041885D /* SceneDelegate.swift */; };
 		F182BA6028CE5C4B0041885D /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F182BA5F28CE5C4B0041885D /* NewsViewController.swift */; };
@@ -19,6 +26,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F1541ECA28CF3F760081C331 /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
+		F1541ECF28CF428C0081C331 /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
+		F1541ED128CF4C5D0081C331 /* LogoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoCell.swift; sourceTree = "<group>"; };
+		F1541ED228CF4C5D0081C331 /* LogoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogoCell.xib; sourceTree = "<group>"; };
+		F1541ED528CF4FD90081C331 /* HeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
+		F1541ED628CF4FD90081C331 /* HeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderCell.xib; sourceTree = "<group>"; };
+		F1541ED928CF57890081C331 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		F182BA5828CE5C4B0041885D /* homework2-news-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "homework2-news-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F182BA5B28CE5C4B0041885D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F182BA5D28CE5C4B0041885D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +57,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F1541EC828CF3F4B0081C331 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F182BA6128CE5C4B0041885D /* Main.storyboard */,
+				F1DA533E28CF27A100F5C2FB /* NewsCell.swift */,
+				F1DA533F28CF27A100F5C2FB /* NewsCell.xib */,
+				F1541ED128CF4C5D0081C331 /* LogoCell.swift */,
+				F1541ED228CF4C5D0081C331 /* LogoCell.xib */,
+				F1541ED528CF4FD90081C331 /* HeaderCell.swift */,
+				F1541ED628CF4FD90081C331 /* HeaderCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F1541EC928CF3F5A0081C331 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F182BA5F28CE5C4B0041885D /* NewsViewController.swift */,
+				F1541ECF28CF428C0081C331 /* CategoriesViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		F1541ECC28CF3F7B0081C331 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F1541ECA28CF3F760081C331 /* CategoryModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		F182BA4F28CE5C4B0041885D = {
 			isa = PBXGroup;
 			children = (
@@ -64,14 +109,14 @@
 			children = (
 				F182BA5B28CE5C4B0041885D /* AppDelegate.swift */,
 				F182BA5D28CE5C4B0041885D /* SceneDelegate.swift */,
-				F182BA5F28CE5C4B0041885D /* NewsViewController.swift */,
-				F182BA6128CE5C4B0041885D /* Main.storyboard */,
+				F1541ECC28CF3F7B0081C331 /* Models */,
+				F1541EC828CF3F4B0081C331 /* Views */,
+				F1541EC928CF3F5A0081C331 /* Controllers */,
 				F182BA6428CE5C4C0041885D /* Assets.xcassets */,
 				F182BA6628CE5C4C0041885D /* LaunchScreen.storyboard */,
 				F182BA6928CE5C4C0041885D /* Info.plist */,
-				F1DA533E28CF27A100F5C2FB /* NewsCell.swift */,
-				F1DA533F28CF27A100F5C2FB /* NewsCell.xib */,
 				F1DA534228CF2ADF00F5C2FB /* Constants.swift */,
+				F1541ED928CF57890081C331 /* Notifications.swift */,
 			);
 			path = "homework2-news-app";
 			sourceTree = "<group>";
@@ -138,6 +183,8 @@
 				F182BA6528CE5C4C0041885D /* Assets.xcassets in Resources */,
 				F1DA534128CF27A100F5C2FB /* NewsCell.xib in Resources */,
 				F182BA6328CE5C4B0041885D /* Main.storyboard in Resources */,
+				F1541ED828CF4FD90081C331 /* HeaderCell.xib in Resources */,
+				F1541ED428CF4C5D0081C331 /* LogoCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,10 +195,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1541EDA28CF57890081C331 /* Notifications.swift in Sources */,
 				F1DA534328CF2ADF00F5C2FB /* Constants.swift in Sources */,
+				F1541ECB28CF3F760081C331 /* CategoryModel.swift in Sources */,
+				F1541ED328CF4C5D0081C331 /* LogoCell.swift in Sources */,
 				F182BA6028CE5C4B0041885D /* NewsViewController.swift in Sources */,
+				F1541ED728CF4FD90081C331 /* HeaderCell.swift in Sources */,
 				F182BA5C28CE5C4B0041885D /* AppDelegate.swift in Sources */,
 				F1DA534028CF27A100F5C2FB /* NewsCell.swift in Sources */,
+				F1541ED028CF428C0081C331 /* CategoriesViewController.swift in Sources */,
 				F182BA5E28CE5C4B0041885D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -302,7 +354,7 @@
 				DEVELOPMENT_TEAM = A9S7ZDQSZC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "homework2-news-app/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "News App";
+				INFOPLIST_KEY_CFBundleDisplayName = "Fake News";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -332,7 +384,7 @@
 				DEVELOPMENT_TEAM = A9S7ZDQSZC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "homework2-news-app/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "News App";
+				INFOPLIST_KEY_CFBundleDisplayName = "Fake News";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
