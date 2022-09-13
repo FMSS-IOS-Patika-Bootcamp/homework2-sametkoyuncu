@@ -8,5 +8,5 @@
 import Foundation
 
 extension Notification.Name {
-    static let categoryNotification = Notification.Name(K.selectedCategoryNotification)
+    static let categoryNotification = Notification.Name(K.Notification.selectedCategory)
 }

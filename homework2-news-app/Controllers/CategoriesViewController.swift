@@ -39,15 +39,13 @@ extension CategoriesViewController: UITableViewDelegate {
     // When the table cell is selected, push the selected category and present the news screen.
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // set notification for the selected category
-        
+        // indexPath.row > 1 because, index 0 is logo cell, index 1 is header cell
         if indexPath.row > 1 {
             let category: [String: Category] = ["category": DummyData.categories[indexPath.row-2]]
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: K.selectedCategoryNotification), object: nil, userInfo: category)
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: K.Notification.selectedCategory), object: nil, userInfo: category)
             // go news screen
             navigationController?.popViewController(animated: true)
         }
-        
-        
     }
     
 }
@@ -86,6 +84,7 @@ extension CategoriesViewController: UITableViewDataSource {
         
         let cell = UITableViewCell()
         cell.textLabel?.font = UIFont.systemFont(ofSize: 24.0)
+        cell.textLabel?.textColor = UIColor(red: 0.15, green: 0.15, blue: 0.15, alpha: 1.00)
         cell.textLabel?.text = DummyData.categories[indexPath.row-2].name
         return cell
     }

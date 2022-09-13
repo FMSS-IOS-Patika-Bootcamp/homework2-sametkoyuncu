@@ -6,10 +6,14 @@
 //
 
 struct K {
+    
     static let logo = "logo"
     static let categoryLogo = "categoryLogo"
     
-    static let selectedCategoryNotification = "CategoryNotification"
+    // notification center IDs
+    struct Notification {
+        static let selectedCategory = "CategoryNotification"
+    }
     
     // custom cell properties
     struct Cell {
@@ -21,5 +25,11 @@ struct K {
         
         static let headerCellNibName = "HeaderCell"
         static let headerCellId = "headerCellId"
+    }
+    
+    // view controller IDs
+    struct ViewController {
+        static let WebKit = "WebKitViewController"
+        static let Details = "DetailsViewController"
     }
 }

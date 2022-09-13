@@ -13,6 +13,7 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var bodyLabel: UILabel!
     @IBOutlet weak var readMoreButton: UIButton!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     // veriables
     var selectedNews: News?
@@ -20,15 +21,21 @@ class DetailsViewController: UIViewController {
     // lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         readMoreButton.layer.cornerRadius = readMoreButton.frame.height / 2
-        
         loadDetails()
     }
     
     // component actions
     @IBAction func backButtonPressed(_ sender: Any) {
         navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func readMoreButtonPressed(_ sender: UIButton) {
+        let webKitVC = storyboard?.instantiateViewController(withIdentifier: K.ViewController.WebKit) as! WebKitViewController
+        
+        webKitVC.urlString = selectedNews?.url
+        
+        present(webKitVC, animated: true)
     }
     
     // helper methods
@@ -54,3 +61,6 @@ extension DetailsViewController: NewsViewControllerDelegate {
         selectedNews = news
     }
 }
+
+
+

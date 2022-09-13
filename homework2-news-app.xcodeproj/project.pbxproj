@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F13C4BAC28D079130047E577 /* WebKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13C4BAB28D079130047E577 /* WebKitViewController.swift */; };
 		F1541ECB28CF3F760081C331 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1541ECA28CF3F760081C331 /* CategoryModel.swift */; };
 		F1541ED028CF428C0081C331 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1541ECF28CF428C0081C331 /* CategoriesViewController.swift */; };
 		F1541ED328CF4C5D0081C331 /* LogoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1541ED128CF4C5D0081C331 /* LogoCell.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F13C4BAB28D079130047E577 /* WebKitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebKitViewController.swift; sourceTree = "<group>"; };
 		F1541ECA28CF3F760081C331 /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		F1541ECF28CF428C0081C331 /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
 		F1541ED128CF4C5D0081C331 /* LogoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoCell.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				F182BA5F28CE5C4B0041885D /* NewsViewController.swift */,
 				F1541ECF28CF428C0081C331 /* CategoriesViewController.swift */,
 				F1F1C29928CFA8BA00ABDB93 /* DetailsViewController.swift */,
+				F13C4BAB28D079130047E577 /* WebKitViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -214,6 +217,7 @@
 				F182BA5C28CE5C4B0041885D /* AppDelegate.swift in Sources */,
 				F1DA534028CF27A100F5C2FB /* NewsCell.swift in Sources */,
 				F1541ED028CF428C0081C331 /* CategoriesViewController.swift in Sources */,
+				F13C4BAC28D079130047E577 /* WebKitViewController.swift in Sources */,
 				F1541EDC28CF65550081C331 /* DummyData.swift in Sources */,
 				F1F1C29A28CFA8BA00ABDB93 /* DetailsViewController.swift in Sources */,
 				F182BA5E28CE5C4B0041885D /* SceneDelegate.swift in Sources */,
