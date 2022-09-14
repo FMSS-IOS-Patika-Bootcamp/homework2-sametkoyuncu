@@ -39,7 +39,9 @@ class NewsViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.allowsMultipleSelection = false
         
-        registerCell()
+        selectedCategory = DummyData.categories.first
+        
+        registerCustomCells()
         loadNews()
     }
     // notification center selector method for get and set selected category
@@ -50,8 +52,10 @@ class NewsViewController: UIViewController {
     }
     
     // custom cell register
-    func registerCell() {
+    func registerCustomCells() {
         collectionView.register(.init(nibName: K.Cell.newsCellNibName, bundle: nil), forCellWithReuseIdentifier: K.Cell.newsCellId)
+        
+        collectionView.register(.init(nibName: K.Cell.largeNewsCellNibName, bundle: nil), forCellWithReuseIdentifier: K.Cell.largeNewsCellId)
     }
     
     // load news when selected category changed
@@ -101,6 +105,26 @@ extension NewsViewController: UICollectionViewDataSource {
     }
     // set cell data
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        // sadece ana ekranda geniş card göstermek için
+        if let selectedCategoryId = selectedCategory?.id, selectedCategoryId == 0 {
+            if (indexPath.row % 3 == 0) {
+                // sanki bi tık DRY burası
+                // benzer işlem aşağıda da var
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.Cell.largeNewsCellId, for: indexPath) as! LargeNewsCell
+
+                let news = filteredNews[indexPath.row]
+            
+                cell.detailsImage.image = UIImage(named: news.imageName)
+                cell.categoryLabel.text = DummyData.categories[news.categoryId].name
+                cell.titleLabel.text = news.title
+                cell.dateLabel.text = news.date
+                
+                return cell
+            }
+        }
+        
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.Cell.newsCellId, for: indexPath) as! NewsCell
         
         let news = filteredNews[indexPath.row]
@@ -115,10 +139,22 @@ extension NewsViewController: UICollectionViewDataSource {
 }
 // set cell width using device sizes
 extension NewsViewController: UICollectionViewDelegateFlowLayout {
+    
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        // sadece ana ekranda geniş card göstermek için
+        if let selectedCategoryId = selectedCategory?.id, selectedCategoryId == 0 {
+            if indexPath.row % 3 == 0 {
+                let width = collectionView.frame.width - 20
+                let height = collectionView.frame.width / 2
+                
+                return CGSize(width: width, height: height).xx_rounded()
+            }
+        }
+        
         let width = collectionView.frame.width / 2 - 15
         let height = 320.0
         
-        return CGSize(width: width, height: height)
+        return CGSize(width: width, height: height).xx_rounded()
     }
 }
