@@ -20,4 +20,6 @@ Uygulama dört farklı ekrandan oluşuyor:
 
 [![Videoyu izle](https://github.com/FMSS-IOS-Patika-Bootcamp/homework2-sametkoyuncu/blob/development/screenshots/youtube.png)](https://youtu.be/Npcv66bSsBU)
 
+> [Git Commit Geçmiş Görseli](https://github.com/FMSS-IOS-Patika-Bootcamp/homework2-sametkoyuncu/blob/development/screenshots/gitGraph.png)
+
 
