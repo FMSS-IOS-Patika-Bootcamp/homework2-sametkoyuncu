@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KAF-6c-lx4">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="bSi-K6-6df">
+            <objects>
+                <navigationController id="KAF-6c-lx4" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="NVu-v3-cQb">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="C1R-os-2Pt"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rCH-R4-hCC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1581" y="68"/>
+        </scene>
+        <!--Categories-->
+        <scene sceneID="xt2-5C-1Kx">
+            <objects>
+                <viewController title="Categories" id="SVb-9R-pDf" customClass="CategoriesViewController" customModule="homework2_news_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hnA-8J-1Em">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="37B-Tl-nO6">
+                                <rect key="frame" x="20" y="88" width="394" height="808"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="f70-bn-aJk"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="37B-Tl-nO6" firstAttribute="top" secondItem="f70-bn-aJk" secondAttribute="top" id="0XI-9E-oIR"/>
+                            <constraint firstAttribute="bottom" secondItem="37B-Tl-nO6" secondAttribute="bottom" id="4jG-p8-9r7"/>
+                            <constraint firstItem="37B-Tl-nO6" firstAttribute="leading" secondItem="f70-bn-aJk" secondAttribute="leading" constant="20" id="7bH-SZ-3fs"/>
+                            <constraint firstItem="f70-bn-aJk" firstAttribute="trailing" secondItem="37B-Tl-nO6" secondAttribute="trailing" id="jad-mt-6Zi"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="OZK-ku-R1u">
+                        <barButtonItem key="leftBarButtonItem" title="Item" style="plain" id="DCr-JM-MFx">
+                            <imageReference key="image" image="xmark" catalog="system" symbolScale="large"/>
+                            <color key="tintColor" systemColor="labelColor"/>
+                            <connections>
+                                <action selector="closeMenuButtonPressed:" destination="SVb-9R-pDf" id="ibp-sm-PY7"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="37B-Tl-nO6" id="wJz-Sf-mTn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ks9-Ap-Iz1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="255" y="-559"/>
+        </scene>
+        <!--Details-->
+        <scene sceneID="hTW-lT-Yns">
+            <objects>
+                <viewController storyboardIdentifier="DetailsViewController" title="Details" useStoryboardIdentifierAsRestorationIdentifier="YES" id="oj0-iy-ucn" customClass="DetailsViewController" customModule="homework2_news_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="p81-ax-RLM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="0ee-gP-fIm">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="gYM-ZO-jNB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="0ee-gP-fIm" firstAttribute="top" secondItem="gYM-ZO-jNB" secondAttribute="top" id="8ab-Fg-2FK"/>
+                            <constraint firstAttribute="bottom" secondItem="0ee-gP-fIm" secondAttribute="bottom" id="ES8-pr-AqX"/>
+                            <constraint firstItem="0ee-gP-fIm" firstAttribute="leading" secondItem="gYM-ZO-jNB" secondAttribute="leading" id="Rm8-G1-SVk"/>
+                            <constraint firstItem="gYM-ZO-jNB" firstAttribute="trailing" secondItem="0ee-gP-fIm" secondAttribute="trailing" id="enL-Vk-mh0"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Details Page" id="Ize-Hr-z1S">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="chevron.backward" catalog="system" id="3zQ-c9-GZ8">
+                            <color key="tintColor" systemColor="systemPurpleColor"/>
+                            <connections>
+                                <action selector="backButtonPressed:" destination="oj0-iy-ucn" id="U7N-5k-kEI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="tableView" destination="0ee-gP-fIm" id="WUc-Ek-JQ7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="got-sr-Aun" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1082.608695652174" y="60.9375"/>
+        </scene>
+        <!--Web Kit View Controller-->
+        <scene sceneID="ftt-VC-7kf">
+            <objects>
+                <viewController storyboardIdentifier="WebKitViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="rQN-Bm-aR4" customClass="WebKitViewController" customModule="homework2_news_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WxV-cR-mfw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZBe-1l-dcu">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="v4e-JE-f5r"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ZBe-1l-dcu" firstAttribute="top" secondItem="v4e-JE-f5r" secondAttribute="top" id="1Qc-Sq-ytL"/>
+                            <constraint firstAttribute="bottom" secondItem="ZBe-1l-dcu" secondAttribute="bottom" id="Hz5-2Z-e5I"/>
+                            <constraint firstItem="ZBe-1l-dcu" firstAttribute="trailing" secondItem="v4e-JE-f5r" secondAttribute="trailing" id="qHK-zh-YT1"/>
+                            <constraint firstItem="ZBe-1l-dcu" firstAttribute="leading" secondItem="v4e-JE-f5r" secondAttribute="leading" id="vgC-a0-oHf"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="oTt-a6-MHe">
+                        <barButtonItem key="backBarButtonItem" title="Geri" id="bwE-Nw-wDY"/>
+                        <barButtonItem key="leftBarButtonItem" title="Geri" image="chevron.backward" catalog="system" id="een-TC-3Jw">
+                            <color key="tintColor" systemColor="systemPurpleColor"/>
+                            <connections>
+                                <action selector="backButtonPressed:" destination="rQN-Bm-aR4" id="v2t-54-cC9"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <modalPageSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="webKit" destination="ZBe-1l-dcu" id="bQW-Za-dpH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HNW-xR-WzT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2057.971014492754" y="68.973214285714278"/>
+        </scene>
+        <!--News-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController title="News" id="BYZ-38-t0r" customClass="NewsViewController" customModule="homework2_news_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Wyv-VR-6Ej">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="M4M-Cn-sWl">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Wyv-VR-6Ej" secondAttribute="bottom" id="1dj-El-ZuA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Wyv-VR-6Ej" secondAttribute="trailing" id="F2g-gY-HQl"/>
+                            <constraint firstItem="Wyv-VR-6Ej" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Mbb-Kp-QQx"/>
+                            <constraint firstItem="Wyv-VR-6Ej" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hWB-bH-ZgA"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Tüm Haberler" largeTitleDisplayMode="always" id="d7F-5V-ben">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="xJu-ct-VQf">
+                            <imageReference key="image" image="line.3.horizontal" catalog="system" symbolScale="large" renderingMode="hierarchical">
+                                <hierarchicalColors>
+                                    <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color systemColor="secondaryLabelColor"/>
+                                    <color systemColor="tertiaryLabelColor"/>
+                                </hierarchicalColors>
+                            </imageReference>
+                            <imageReference key="largeContentSizeImage" image="line.3.horizontal" catalog="system" symbolScale="large" renderingMode="hierarchical">
+                                <hierarchicalColors>
+                                    <color systemColor="labelColor"/>
+                                    <color systemColor="secondaryLabelColor"/>
+                                    <color systemColor="tertiaryLabelColor"/>
+                                </hierarchicalColors>
+                            </imageReference>
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <segue destination="SVb-9R-pDf" kind="push" identifier="categorySegue" id="O0C-xu-cVP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="collectionView" destination="Wyv-VR-6Ej" id="RhQ-NM-ZJQ"/>
+                        <segue destination="oj0-iy-ucn" kind="push" identifier="detailsSegue" id="5BL-Lr-rAv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-487" y="61"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="chevron.backward" catalog="system" width="96" height="128"/>
+        <image name="line.3.horizontal" catalog="system" width="128" height="64"/>
+        <image name="xmark" catalog="system" width="128" height="113"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tertiaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

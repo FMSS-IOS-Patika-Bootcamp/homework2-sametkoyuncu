@@ -1,17 +1,23 @@
-# HomeWork2
-İkinci Ödev
+# Ödev 2 - Haberler Uygulaması
+FMSS Bilişim & Patika iOS Bootcamp'inin ikinci ödevi olarak yaptığım haberler uygulaması.
 
-          Haber Uygulaması
-- İlk sayfada Haberler Listelenicek.
-- Haberler   TableView yada # CollecitionView ile gösterilecek.
-- Habere tıklanınca  ilgili Haberin detay sayfası acılıcak.
-- Geçişler  Navigation Controller ile gerçekleştirilicek.
-- Haber Detayına gecerken Struct gönderip. Detay sayfasında Navigation Title bu structan alınıcak.
-- Detay sayfasındaki Description ( Açıklama ) bölümü gönderdiğimiz Streuctan alınıcak.
-- Detay sayfasının Description ( Acıklama ) bölümüne 20 px aralık ile Bir buton konumlandırılıcak. 
-- Detay sayfasındaki Butona bastığımızda 3. bir ekrana gidilicek.
-- 3. Ekranımızda Webview olucak ve ilgili Habere yönlendirilicek ( Burada istediğiniz siteye yönlendirme yapabilirsiniz Dumyy Haberlerle çalışıcaksınız. Örnek: https://www.google.com.tr/  )
+Uygulama dört farklı ekrandan oluşuyor:
+- İlk ekranda `CollectionView` kullanılarak haber kartları gösteriliyor.
+- Haberin üstüne tıklanınca (2. ekranımız olan) detay sayfası açılıyor ve haberin detaylarıyla birlikte `Devamını oku..` butonu bulunuyor.
+- `Devamını oku..` butonuna tıklayınca (3. ekranımız olan) WebKit View kullanarak, haberin yer aldığı websitesi açılıyor.
+- Üst kısımda sağdaki menü butonu ile de (4. ekranımız olan) `TableView` kullanarak yapılan kategoriler ekranı açılıyor.
+
+## Kullanılanlar
+- Table View  (Custom TableViewCell using .xib file)
+- Collection View  (Custom CollectionViewCell using .xib file)
+- WebKit View
+- Navigation Controller
+- Notification Center
+- Delegation Pattern
+
+## Ekran Görüntüleri
+![ana-ekran](https://github.com/FMSS-IOS-Patika-Bootcamp/homework2-sametkoyuncu/blob/development/screenshots/screenshot1.png)
+
+[![Videoyu izle](https://github.com/FMSS-IOS-Patika-Bootcamp/homework2-sametkoyuncu/blob/development/screenshots/youtube.png)](https://youtu.be/Npcv66bSsBU)
 
 
-# CollectionView da bir row da 2 ve daha fazla Haber gösterebilen extra puan alıcaktır.
-- İsteyen Uygulamasını Icon Koyabilir.
