@@ -79,18 +79,55 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="0ee-gP-fIm">
-                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </tableView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OrA-BH-jVj">
+                                <rect key="frame" x="0.0" y="88" width="414" height="220"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="220" id="L9a-Tq-hwx"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Başlık" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LTH-ky-xeu">
+                                <rect key="frame" x="20" y="318" width="374" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="İçerik" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xjs-fF-Hpl">
+                                <rect key="frame" x="20" y="347" width="374" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lq2-3d-2ZG">
+                                <rect key="frame" x="107" y="377.5" width="200" height="50"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="6Dd-3r-AFP"/>
+                                    <constraint firstAttribute="height" constant="50" id="8Fk-bA-jxs"/>
+                                </constraints>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Devamını oku..">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="18"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="readMoreButtonPressed:" destination="oj0-iy-ucn" eventType="touchUpInside" id="n6l-PO-KNP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gYM-ZO-jNB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="0ee-gP-fIm" firstAttribute="top" secondItem="gYM-ZO-jNB" secondAttribute="top" id="8ab-Fg-2FK"/>
-                            <constraint firstAttribute="bottom" secondItem="0ee-gP-fIm" secondAttribute="bottom" id="ES8-pr-AqX"/>
-                            <constraint firstItem="0ee-gP-fIm" firstAttribute="leading" secondItem="gYM-ZO-jNB" secondAttribute="leading" id="Rm8-G1-SVk"/>
-                            <constraint firstItem="gYM-ZO-jNB" firstAttribute="trailing" secondItem="0ee-gP-fIm" secondAttribute="trailing" id="enL-Vk-mh0"/>
+                            <constraint firstItem="gYM-ZO-jNB" firstAttribute="trailing" secondItem="Xjs-fF-Hpl" secondAttribute="trailing" constant="20" id="42L-bO-v8d"/>
+                            <constraint firstItem="lq2-3d-2ZG" firstAttribute="top" secondItem="Xjs-fF-Hpl" secondAttribute="bottom" constant="10" id="G0e-fZ-fef"/>
+                            <constraint firstItem="Xjs-fF-Hpl" firstAttribute="leading" secondItem="gYM-ZO-jNB" secondAttribute="leading" constant="20" id="L5G-KW-hW6"/>
+                            <constraint firstItem="LTH-ky-xeu" firstAttribute="leading" secondItem="gYM-ZO-jNB" secondAttribute="leading" constant="20" id="bon-GU-5oB"/>
+                            <constraint firstItem="lq2-3d-2ZG" firstAttribute="centerX" secondItem="p81-ax-RLM" secondAttribute="centerX" id="cAv-3V-pEX"/>
+                            <constraint firstItem="gYM-ZO-jNB" firstAttribute="trailing" secondItem="LTH-ky-xeu" secondAttribute="trailing" constant="20" id="dh5-4J-jpa"/>
+                            <constraint firstItem="OrA-BH-jVj" firstAttribute="leading" secondItem="gYM-ZO-jNB" secondAttribute="leading" id="e1I-mo-MbK"/>
+                            <constraint firstItem="OrA-BH-jVj" firstAttribute="top" secondItem="gYM-ZO-jNB" secondAttribute="top" id="fQN-mf-fdB"/>
+                            <constraint firstItem="LTH-ky-xeu" firstAttribute="top" secondItem="OrA-BH-jVj" secondAttribute="bottom" constant="10" id="maw-Ke-XdG"/>
+                            <constraint firstItem="gYM-ZO-jNB" firstAttribute="trailing" secondItem="OrA-BH-jVj" secondAttribute="trailing" id="mhT-4z-Cii"/>
+                            <constraint firstItem="Xjs-fF-Hpl" firstAttribute="top" secondItem="LTH-ky-xeu" secondAttribute="bottom" constant="5" id="z7U-gP-Uma"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Details Page" id="Ize-Hr-z1S">
@@ -103,7 +140,10 @@
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
-                        <outlet property="tableView" destination="0ee-gP-fIm" id="WUc-Ek-JQ7"/>
+                        <outlet property="bodyLabel" destination="Xjs-fF-Hpl" id="Aat-qU-QbL"/>
+                        <outlet property="detailsImage" destination="OrA-BH-jVj" id="dbR-1u-5Dz"/>
+                        <outlet property="readMoreButton" destination="lq2-3d-2ZG" id="bEe-z9-gbm"/>
+                        <outlet property="titleLabel" destination="LTH-ky-xeu" id="7lc-pu-3Cn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="got-sr-Aun" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -232,6 +272,9 @@
         </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemPurpleColor">
             <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
