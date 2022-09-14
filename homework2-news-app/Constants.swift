@@ -29,18 +29,6 @@ struct K {
         
         static let headerCellNibName = "HeaderCell"
         static let headerCellId = "headerCellId"
-        
-        static let detailsImageCellNibName = "DetailsImageCell"
-        static let detailsImageCellId = "detailsImageCellId"
-        
-        static let detailsTitleCellNibName = "DetailsTitleCell"
-        static let detailsTitleCellId = "detailsTitleCellId"
-        
-        static let detailsBodyCellNibName = "DetailsBodyCell"
-        static let detailsBodyCellId = "detailsBodyCellId"
-        
-        static let detailsButtonCellNibName = "DetailsButtonCell"
-        static let detailsButtonCellId = "detailsButtonCellId"
     }
     
     // view controller IDs
