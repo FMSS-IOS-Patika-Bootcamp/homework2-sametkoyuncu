@@ -7,8 +7,15 @@
 
 import UIKit
 
+protocol NewsViewControllerDelegate {
+    func didNewsSelected(_ news: News)
+}
+
 class NewsViewController: UIViewController {
+    // outlets
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    // veriables
     // when change selected category, reload news
     var selectedCategory: Category? {
         didSet{
@@ -16,16 +23,26 @@ class NewsViewController: UIViewController {
         }
     }
     
+    var filteredNews: [News] = []
+    
+    var delegate: NewsViewControllerDelegate?
+
+    // lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // add notification center for getting selected category from the categories view controller
         let notificationCenter: NotificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(self.changeCategory(_:)), name: .categoryNotification, object: nil)
         
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.allowsMultipleSelection = false
         
-        registerCell()
+        selectedCategory = DummyData.categories.first
+        
+        registerCustomCells()
+        loadNews()
     }
     // notification center selector method for get and set selected category
     @objc func changeCategory(_ notification: NSNotification) {
@@ -33,43 +50,111 @@ class NewsViewController: UIViewController {
           selectedCategory = category
           }
     }
- 
-    // for register custom cell
-    func registerCell() {
+    
+    // custom cell register
+    func registerCustomCells() {
         collectionView.register(.init(nibName: K.Cell.newsCellNibName, bundle: nil), forCellWithReuseIdentifier: K.Cell.newsCellId)
+        
+        collectionView.register(.init(nibName: K.Cell.largeNewsCellNibName, bundle: nil), forCellWithReuseIdentifier: K.Cell.largeNewsCellId)
     }
     
     // load news when selected category changed
     func loadNews() {
-        print(selectedCategory?.name)
+        // filter news
+        filteredNews = DummyData.news.filter {
+            if let selectedCategoryId = self.selectedCategory?.id, selectedCategoryId > 0  {
+                return $0.categoryId == selectedCategoryId
+            }
+            
+            return true
+        }
+        
+        // update navBar title
+        if let selectedCategoryId = selectedCategory?.id, selectedCategoryId > 0 {
+                title = selectedCategory?.name
+        } else {
+            title = "Tüm Haberler"
+        }
+        
+        collectionView.reloadData()
     }
 }
 
-
+// MARK: - collectionView delegate methods
 extension NewsViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        // target view controller
+        let detailsViewController = self.storyboard?.instantiateViewController(withIdentifier: K.ViewController.Details) as! DetailsViewController
+        
+        self.delegate = detailsViewController
+        // find selected new
+        let news = filteredNews[indexPath.row]
+        // set selected news
+        self.delegate?.didNewsSelected(news)
+        
+        // go details screen
+        navigationController?.pushViewController(detailsViewController, animated: true)
+    }
 }
 
+// MARK: - collectionView data source methods
 extension NewsViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return filteredNews.count
     }
     // set cell data
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        // sadece ana ekranda geniş card göstermek için
+        if let selectedCategoryId = selectedCategory?.id, selectedCategoryId == 0 {
+            if (indexPath.row % 3 == 0) {
+                // sanki bi tık DRY burası
+                // benzer işlem aşağıda da var
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.Cell.largeNewsCellId, for: indexPath) as! LargeNewsCell
+
+                let news = filteredNews[indexPath.row]
+            
+                cell.detailsImage.image = UIImage(named: news.imageName)
+                cell.categoryLabel.text = DummyData.categories[news.categoryId].name
+                cell.titleLabel.text = news.title
+                cell.dateLabel.text = news.date
+                
+                return cell
+            }
+        }
+        
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.Cell.newsCellId, for: indexPath) as! NewsCell
         
-        cell.titleLabel.text = "cell for \(indexPath.row)"
-        cell.image.image = UIImage(named: "hamburgerMenu")
+        let news = filteredNews[indexPath.row]
+        
+        cell.titleLabel.text = news.title
+        cell.image.image = UIImage(named: news.imageName)
+        cell.dateLabel.text = news.date
+        cell.categoryLabel.text = DummyData.categories[news.categoryId].name
         
         return cell
     }
 }
 // set cell width using device sizes
 extension NewsViewController: UICollectionViewDelegateFlowLayout {
+    
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        // sadece ana ekranda geniş card göstermek için
+        if let selectedCategoryId = selectedCategory?.id, selectedCategoryId == 0 {
+            if indexPath.row % 3 == 0 {
+                let width = collectionView.frame.width - 20
+                let height = collectionView.frame.width / 2
+                
+                return CGSize(width: width, height: height).xx_rounded()
+            }
+        }
+        
         let width = collectionView.frame.width / 2 - 15
         let height = 320.0
         
-        
-        return CGSize(width: width, height: height)
+        return CGSize(width: width, height: height).xx_rounded()
     }
 }

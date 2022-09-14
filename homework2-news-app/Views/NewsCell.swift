@@ -18,6 +18,7 @@ class NewsCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
         cellView.layer.cornerRadius = 10
+        image.layer.cornerRadius = 10
     }
 }
 

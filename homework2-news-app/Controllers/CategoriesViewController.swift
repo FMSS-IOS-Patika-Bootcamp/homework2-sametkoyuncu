@@ -33,33 +33,24 @@ class CategoriesViewController: UIViewController {
         tableView.register(.init(nibName: K.Cell.logoCellNibName, bundle: nil), forCellReuseIdentifier: K.Cell.logoCellId)
         tableView.register(.init(nibName: K.Cell.headerCellNibName, bundle: nil), forCellReuseIdentifier: K.Cell.headerCellId)
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let newsVC: NewsViewController = segue.destination as! NewsViewController
-        
-        if let indexPath = tableView.indexPathForSelectedRow {
-            newsVC.selectedCategory = DummyData.categories[indexPath.row]
-        }
-    }
 }
-
+// MARK: - table view delegate methods
 extension CategoriesViewController: UITableViewDelegate {
     // When the table cell is selected, push the selected category and present the news screen.
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // set notification for the selected category
-        
+        // indexPath.row > 1 because, index 0 is logo cell, index 1 is header cell
         if indexPath.row > 1 {
-            let catagory: [String: Category] = ["category": DummyData.categories[indexPath.row-2]]
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: K.categoryNotification), object: nil, userInfo: catagory)
+            let category: [String: Category] = ["category": DummyData.categories[indexPath.row-2]]
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: K.Notification.selectedCategory), object: nil, userInfo: category)
             // go news screen
             navigationController?.popViewController(animated: true)
         }
-        
-        
     }
     
 }
 
+// MARK: - table view data source methods
 extension CategoriesViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -93,6 +84,7 @@ extension CategoriesViewController: UITableViewDataSource {
         
         let cell = UITableViewCell()
         cell.textLabel?.font = UIFont.systemFont(ofSize: 24.0)
+        cell.textLabel?.textColor = UIColor(red: 0.15, green: 0.15, blue: 0.15, alpha: 1.00)
         cell.textLabel?.text = DummyData.categories[indexPath.row-2].name
         return cell
     }

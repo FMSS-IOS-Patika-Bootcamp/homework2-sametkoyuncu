@@ -20,45 +20,45 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eCI-hc-4p8">
                         <rect key="frame" x="0.0" y="0.0" width="185" height="320"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="U2b-t2-ouV">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="U2b-t2-ouV">
                                 <rect key="frame" x="0.0" y="0.0" width="185" height="185"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="185" id="rlj-1r-UPq"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="TopLeft" axis="vertical" distribution="equalSpacing" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="phJ-aM-daU">
-                                <rect key="frame" x="10" y="195" width="165" height="115"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CATEGORY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lnf-m3-lF9">
-                                        <rect key="frame" x="0.0" y="0.0" width="87.5" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" systemColor="systemGrayColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem Ipsum Dolor Sit amet" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bhf-Qg-yjd">
-                                        <rect key="frame" x="0.0" y="39" width="148.5" height="41"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="29 Ağustos 2022" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fGf-1t-CHX">
-                                        <rect key="frame" x="0.0" y="98" width="109.5" height="17"/>
-                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
-                                        <color key="textColor" systemColor="systemGrayColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CATEGORY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lnf-m3-lF9">
+                                <rect key="frame" x="10" y="195" width="165" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemGrayColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="29 Ağustos 2022" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fGf-1t-CHX">
+                                <rect key="frame" x="10" y="293" width="165" height="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                <color key="textColor" systemColor="systemGrayColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem Ipsum Dolor Sit amet" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bhf-Qg-yjd">
+                                <rect key="frame" x="10" y="220.5" width="165" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="U2b-t2-ouV" firstAttribute="top" secondItem="eCI-hc-4p8" secondAttribute="top" id="0Wl-L3-Zpk"/>
-                            <constraint firstAttribute="bottom" secondItem="phJ-aM-daU" secondAttribute="bottom" constant="10" id="Bon-7v-khA"/>
-                            <constraint firstItem="phJ-aM-daU" firstAttribute="leading" secondItem="eCI-hc-4p8" secondAttribute="leading" constant="10" id="D5w-s7-T57"/>
-                            <constraint firstItem="phJ-aM-daU" firstAttribute="top" secondItem="U2b-t2-ouV" secondAttribute="bottom" constant="10" id="Frx-zk-bZF"/>
+                            <constraint firstItem="bhf-Qg-yjd" firstAttribute="leading" secondItem="eCI-hc-4p8" secondAttribute="leading" constant="10" id="190-i8-Swz"/>
+                            <constraint firstAttribute="trailing" secondItem="lnf-m3-lF9" secondAttribute="trailing" constant="10" id="3t3-Ns-Zzz"/>
+                            <constraint firstAttribute="bottom" secondItem="fGf-1t-CHX" secondAttribute="bottom" constant="10" id="Sfi-gc-Bvd"/>
+                            <constraint firstItem="fGf-1t-CHX" firstAttribute="leading" secondItem="eCI-hc-4p8" secondAttribute="leading" constant="10" id="WP6-IR-TJC"/>
+                            <constraint firstItem="lnf-m3-lF9" firstAttribute="leading" secondItem="eCI-hc-4p8" secondAttribute="leading" constant="10" id="Xnj-xv-tnu"/>
+                            <constraint firstItem="bhf-Qg-yjd" firstAttribute="top" secondItem="lnf-m3-lF9" secondAttribute="bottom" constant="5" id="Zkv-A9-d3L"/>
                             <constraint firstAttribute="trailing" secondItem="U2b-t2-ouV" secondAttribute="trailing" id="Zxd-p7-Osw"/>
-                            <constraint firstAttribute="trailing" secondItem="phJ-aM-daU" secondAttribute="trailing" constant="10" id="h5v-vd-VQE"/>
+                            <constraint firstAttribute="trailing" secondItem="fGf-1t-CHX" secondAttribute="trailing" constant="10" id="gw6-Cn-oHW"/>
+                            <constraint firstItem="lnf-m3-lF9" firstAttribute="top" secondItem="U2b-t2-ouV" secondAttribute="bottom" constant="10" id="mLY-UQ-Cp4"/>
                             <constraint firstItem="U2b-t2-ouV" firstAttribute="leading" secondItem="eCI-hc-4p8" secondAttribute="leading" id="sya-iF-Ujg"/>
+                            <constraint firstAttribute="trailing" secondItem="bhf-Qg-yjd" secondAttribute="trailing" constant="10" id="uNg-UE-mUB"/>
                         </constraints>
                     </view>
                 </subviews>
