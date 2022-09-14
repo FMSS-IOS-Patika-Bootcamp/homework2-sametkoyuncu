@@ -31,6 +31,7 @@ class CategoriesViewController: UIViewController {
     // for register custom cells
     func registerCustomCells() {
         tableView.register(.init(nibName: K.Cell.logoCellNibName, bundle: nil), forCellReuseIdentifier: K.Cell.logoCellId)
+        
         tableView.register(.init(nibName: K.Cell.headerCellNibName, bundle: nil), forCellReuseIdentifier: K.Cell.headerCellId)
     }
 }

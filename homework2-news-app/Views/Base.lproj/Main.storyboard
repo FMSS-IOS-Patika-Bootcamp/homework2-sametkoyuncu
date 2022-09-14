@@ -97,7 +97,7 @@
                         <barButtonItem key="leftBarButtonItem" title="Item" image="chevron.backward" catalog="system" id="3zQ-c9-GZ8">
                             <color key="tintColor" systemColor="systemPurpleColor"/>
                             <connections>
-                                <action selector="backButtonPressed:" destination="oj0-iy-ucn" id="ewR-5e-RAr"/>
+                                <action selector="backButtonPressed:" destination="oj0-iy-ucn" id="U7N-5k-kEI"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

@@ -39,8 +39,10 @@ class NewsViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.allowsMultipleSelection = false
         
+        // selected category default value
         selectedCategory = DummyData.categories.first
         
+        // register custom cells and filter news
         registerCustomCells()
         loadNews()
     }
@@ -61,7 +63,7 @@ class NewsViewController: UIViewController {
     // load news when selected category changed
     func loadNews() {
         // filter news
-        filteredNews = DummyData.news.filter {
+        filteredNews = DummyData.allNews.filter {
             if let selectedCategoryId = self.selectedCategory?.id, selectedCategoryId > 0  {
                 return $0.categoryId == selectedCategoryId
             }
@@ -70,6 +72,8 @@ class NewsViewController: UIViewController {
         }
         
         // update navBar title
+        // kategori 0'ın adı "hepsi" ama sayfa başlığı olarak güzel olmayacağı için
+        // onun yerine "Tüm Haberler" yazdırıyorum
         if let selectedCategoryId = selectedCategory?.id, selectedCategoryId > 0 {
                 title = selectedCategory?.name
         } else {
@@ -142,7 +146,7 @@ extension NewsViewController: UICollectionViewDelegateFlowLayout {
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        // sadece ana ekranda geniş card göstermek için
+        // sadece ana ekranda geniş cell göstermek için
         if let selectedCategoryId = selectedCategory?.id, selectedCategoryId == 0 {
             if indexPath.row % 3 == 0 {
                 let width = collectionView.frame.width - 20
@@ -151,7 +155,7 @@ extension NewsViewController: UICollectionViewDelegateFlowLayout {
                 return CGSize(width: width, height: height).xx_rounded()
             }
         }
-        
+        // burası normal boyuttaki cell'ler için
         let width = collectionView.frame.width / 2 - 15
         let height = 320.0
         

@@ -8,7 +8,6 @@
 import UIKit
 
 class NewsCell: UICollectionViewCell {
-    @IBOutlet weak var cellView: UIView!
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
@@ -17,8 +16,7 @@ class NewsCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        cellView.layer.cornerRadius = 10
-        image.layer.cornerRadius = 10
+        self.layer.cornerRadius = 10
     }
 }
 

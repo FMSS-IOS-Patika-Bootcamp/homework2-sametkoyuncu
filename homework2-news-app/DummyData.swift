@@ -14,7 +14,7 @@ struct DummyData {
         Category(id: 4, name: "Spor")
     ]
     
-    static let news =  [
+    static let allNews =  [
         News(id: 0,
              title: "Ukrayna'da Türk iş insanlarına yaptırım için kampanya başlatıldı",
              body: "Ukrayna Dışişleri Bakanlığı’na bağlı bir internet sitesi bazı Türk iş insanlarına, devlete ait Ziraat Bankası’na, İş Bankası yöneticilerine ve Rusya’da faaliyet gösteren Credit Europe Bank’ın sahibi iş insanı Hüsnü Özyeğin’e yaptırım istedi. Aydınlık gazetesinin haberine göre, Ukrayna Dışişleri Bakanlığı’na bağlı bir sitede (sanctions.nazk.gov.ua) bazı Türk iş insanları ve bankalara yaptırım uygulanması yönünde kampanya yürütüldüğü ortaya çıktı. Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit​​, morbo vel maleficia? De apocalypsi gorger omero undead survivor dictum mauris. Hi mindless mortuis soulless creaturas, imo evil stalking monstra adventus resi dentevil vultus comedat cerebella viventium. Qui animated corpse, cricket bat max brucks terribilem incessu zomby. The voodoo sacerdos flesh eater, suscitat mortuos comedere carnem virus. Zonbi tattered for solum oculi eorum defunctis go lum cerebro. Nescio brains an Undead zombies. Sicut malus putrid voodoo horror. Nigh tofth eliv ingdead.",

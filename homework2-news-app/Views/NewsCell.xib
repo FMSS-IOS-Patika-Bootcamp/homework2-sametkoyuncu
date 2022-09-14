@@ -73,7 +73,6 @@
             <size key="customSize" width="185" height="320"/>
             <connections>
                 <outlet property="categoryLabel" destination="lnf-m3-lF9" id="Gbu-Dq-LwP"/>
-                <outlet property="cellView" destination="eCI-hc-4p8" id="cVc-49-OdW"/>
                 <outlet property="dateLabel" destination="fGf-1t-CHX" id="N9G-kN-G2k"/>
                 <outlet property="image" destination="U2b-t2-ouV" id="5Ax-6v-9PK"/>
                 <outlet property="titleLabel" destination="bhf-Qg-yjd" id="rbZ-rq-Rng"/>

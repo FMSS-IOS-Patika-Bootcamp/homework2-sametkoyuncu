@@ -23,11 +23,7 @@ class WebKitViewController: UIViewController {
             
             webKit.load(request)
         }
-       
+        // kaydırarak (tarayıcı içinde) önceki sayfaya gelmek için
         webKit.allowsBackForwardNavigationGestures = true
-    }
-
-    @IBAction func backButtonPressed(_ sender: UIBarButtonItem) {
-        navigationController?.popViewController(animated: true)
     }
 }

@@ -6,7 +6,8 @@
 //
 
 import UIKit
-
+// CollectionView'in son satırında sorun yaşıyordum onun için ekledim
+// faydasını da görmedim ama olsa iyi olacak bir şeymiş sanki..
 extension CGFloat {
     func xx_rounded(_ rule: FloatingPointRoundingRule = .down, toDecimals decimals: Int = 2) -> CGFloat {
         let multiplier = CGFloat(pow(10.0, CGFloat(decimals)))

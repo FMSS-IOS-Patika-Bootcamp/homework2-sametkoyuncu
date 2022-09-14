@@ -7,6 +7,12 @@
 
 import UIKit
 
+// MARK: - AÇIKLAMA
+/*
+    ScrollView kullanmayı beceremediğim için, haber detaylarını TableView'de gösteriyorun.
+    Görsel, Başlık, İçerik ve Buton için ayrı cell oluşturup, onları çağırdım.
+ */
+
 class DetailsViewController: UIViewController {
     // outlets
     @IBOutlet weak var tableView: UITableView!
@@ -26,17 +32,8 @@ class DetailsViewController: UIViewController {
         title = selectedNews?.title
     }
     
-    // component actions
-    @IBAction func backButtonPressed(_ sender: Any) {
+    @IBAction func backButtonPressed(_ sender: UIBarButtonItem) {
         navigationController?.popViewController(animated: true)
-    }
-    
-    @IBAction func readMoreButtonPressed(_ sender: UIButton) {
-        let webKitVC = storyboard?.instantiateViewController(withIdentifier: K.ViewController.WebKit) as! WebKitViewController
-        
-        webKitVC.urlString = selectedNews?.url
-        
-        present(webKitVC, animated: true)
     }
     
     // for register custom cells
@@ -64,6 +61,9 @@ extension DetailsViewController: NewsViewControllerDelegate {
 // MARK: - table view delegate and datasource methods
 extension DetailsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // butonu çalıştıramadığım için
+        // table view'in butona gelen
+        // satırını buton gibi kullanıyorum
         if indexPath.row == 3 {
             let webKitVC = self.storyboard?.instantiateViewController(withIdentifier: K.ViewController.WebKit) as! WebKitViewController
              
@@ -82,14 +82,16 @@ extension DetailsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+        // Görsel satırı
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: K.Cell.detailsImageCellId, for: indexPath) as! DetailsImageCell
             
             cell.detailsImage.image = UIImage(named: selectedNews?.imageName ?? "imageNotFound")
             
             return cell
-        } else if indexPath.row == 1 {
+        }
+        // Başlık satırı
+        else if indexPath.row == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: K.Cell.detailsTitleCellId, for: indexPath) as! DetailsTitleCell
             
             // selected cell background color
@@ -100,7 +102,9 @@ extension DetailsViewController: UITableViewDataSource {
             cell.detailsTitleLabel.text = selectedNews?.title
             
             return cell
-        } else if indexPath.row == 2 {
+        }
+        // İçerik Satırı
+        else if indexPath.row == 2 {
             let cell = tableView.dequeueReusableCell(withIdentifier: K.Cell.detailsBodyCellId, for: indexPath) as! DetailsBodyCell
             
             // selected cell background color
@@ -112,7 +116,10 @@ extension DetailsViewController: UITableViewDataSource {
             
             return cell
         }
-        // else
+        // else - zaten yukarıdaki koşullar 'return' kullandığı için
+        //        ekstra 'else' bloğu açmadım
+        
+        // Buton satırı
         let cell = tableView.dequeueReusableCell(withIdentifier: K.Cell.detailsButtonCellId, for: indexPath) as! DetailsButtonCell
         // selected cell background color
         let bgColorView = UIView()
@@ -120,10 +127,7 @@ extension DetailsViewController: UITableViewDataSource {
         cell.selectedBackgroundView = bgColorView
         
         return cell
-        
     }
-    
-    
 }
 
 
