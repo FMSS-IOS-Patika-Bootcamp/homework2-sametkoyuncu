@@ -53,7 +53,7 @@ class NewsViewController: UIViewController {
           }
     }
     
-    // custom cell register
+    // custom cells register
     func registerCustomCells() {
         collectionView.register(.init(nibName: K.Cell.newsCellNibName, bundle: nil), forCellWithReuseIdentifier: K.Cell.newsCellId)
         
@@ -62,12 +62,12 @@ class NewsViewController: UIViewController {
     
     // load news when selected category changed
     func loadNews() {
-        // filter news
+        // filter news by category id
         filteredNews = DummyData.allNews.filter {
             if let selectedCategoryId = self.selectedCategory?.id, selectedCategoryId > 0  {
                 return $0.categoryId == selectedCategoryId
             }
-            
+            // If the selected category id is 0, means 'all news'
             return true
         }
         
@@ -90,9 +90,9 @@ extension NewsViewController: UICollectionViewDelegate {
         
         // target view controller
         let detailsViewController = self.storyboard?.instantiateViewController(withIdentifier: K.ViewController.Details) as! DetailsViewController
-        
+        // set delegate
         self.delegate = detailsViewController
-        // find selected new
+        // find selected news
         let news = filteredNews[indexPath.row]
         // set selected news
         self.delegate?.didNewsSelected(news)
@@ -110,7 +110,9 @@ extension NewsViewController: UICollectionViewDataSource {
     // set cell data
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        // sadece ana ekranda geniş card göstermek için
+        // show large custom cell
+        // geniş cell göster + sadece ana ekranda göster.
+        // diğer ekranların cell boyutları standart
         if let selectedCategoryId = selectedCategory?.id, selectedCategoryId == 0 {
             if (indexPath.row % 3 == 0) {
                 // sanki bi tık DRY burası
@@ -128,7 +130,7 @@ extension NewsViewController: UICollectionViewDataSource {
             }
         }
         
-        
+        // show default custom cell
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.Cell.newsCellId, for: indexPath) as! NewsCell
         
         let news = filteredNews[indexPath.row]
@@ -144,14 +146,15 @@ extension NewsViewController: UICollectionViewDataSource {
 // set cell width using device sizes
 extension NewsViewController: UICollectionViewDelegateFlowLayout {
     
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        // sadece ana ekranda geniş cell göstermek için
+        // geniş cell göster + sadece ana ekranda göster
+        // diğer ekranların cell boyutları standart
         if let selectedCategoryId = selectedCategory?.id, selectedCategoryId == 0 {
             if indexPath.row % 3 == 0 {
                 let width = collectionView.frame.width - 20
                 let height = collectionView.frame.width / 2
-                
+                // xx_rounded()
+                // son row'daki cell inset'inde sorun yaşıyordum, o yüzden kullandım
                 return CGSize(width: width, height: height).xx_rounded()
             }
         }
