@@ -7,12 +7,6 @@
 
 import UIKit
 
-// MARK: - AÇIKLAMA
-/*
-    ScrollView kullanmayı beceremediğim için, haber detaylarını TableView'de gösteriyorun.
-    Görsel, Başlık, İçerik ve Buton için ayrı cell oluşturup, onları çağırdım.
- */
-
 class DetailsViewController: UIViewController {
     // outlets
     @IBOutlet weak var detailsImage: UIImageView!
@@ -52,20 +46,11 @@ class DetailsViewController: UIViewController {
     }
 }
 
-// MARK: - news delegate method
+// MARK: - news delegate method - get new from news screen using delagation
 extension DetailsViewController: NewsViewControllerDelegate {
     func didNewsSelected(_ news: News) {
         selectedNews = news
     }
 }
-
-/*
- 
- let webKitVC = self.storyboard?.instantiateViewController(withIdentifier: K.ViewController.WebKit) as! WebKitViewController
-  
- webKitVC.urlString = selectedNews?.url
- 
- self.present(webKitVC, animated: true)
- */
 
 

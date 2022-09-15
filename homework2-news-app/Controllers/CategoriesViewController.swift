@@ -6,7 +6,8 @@
 //
 
 import UIKit
-
+// MARK: - ödev de collection view veya table view kullanılması gerektiği yazıyor
+//         ben de her iki kullanabilmek için, kategoriler ekranını ekledim
 class CategoriesViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
@@ -28,7 +29,7 @@ class CategoriesViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
-    // for register custom cells
+    // register custom cells
     func registerCustomCells() {
         tableView.register(.init(nibName: K.Cell.logoCellNibName, bundle: nil), forCellReuseIdentifier: K.Cell.logoCellId)
         
@@ -55,7 +56,7 @@ extension CategoriesViewController: UITableViewDelegate {
 extension CategoriesViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // two custon cell + categories count
+        // two custom cell (logo and header) + categories count
         return DummyData.categories.count + 2
     }
     // we have two custom cell and category cells
