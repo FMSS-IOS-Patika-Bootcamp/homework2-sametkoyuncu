@@ -20,6 +20,6 @@ Uygulama dört farklı ekrandan oluşuyor:
 
 ## Ekran Görüntüleri
 
-![ana-ekran](https://github.com/FMSS-IOS-Patika-Bootcamp/homework2-sametkoyuncu/blob/development/screenshots/screenshot1.png)
+![ana-ekran](https://github.com/FMSS-IOS-Patika-Bootcamp/homework2-sametkoyuncu/blob/main/screenshots/screenshot1.png)
 
-[![Videoyu izle](https://github.com/FMSS-IOS-Patika-Bootcamp/homework2-sametkoyuncu/blob/development/screenshots/youtube.png)](https://youtu.be/Npcv66bSsBU)
+[![Videoyu izle](https://github.com/FMSS-IOS-Patika-Bootcamp/homework2-sametkoyuncu/blob/main/screenshots/youtube.png)](https://youtu.be/Npcv66bSsBU)
