@@ -30,7 +30,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rCH-R4-hCC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1581" y="68"/>
+            <point key="canvasLocation" x="-1552" y="61"/>
         </scene>
         <!--Categories-->
         <scene sceneID="xt2-5C-1Kx">
@@ -91,14 +91,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="İçerik" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xjs-fF-Hpl">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="250" text="İçerik" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xjs-fF-Hpl">
                                 <rect key="frame" x="20" y="347" width="374" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lq2-3d-2ZG">
-                                <rect key="frame" x="107" y="377.5" width="200" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lq2-3d-2ZG">
+                                <rect key="frame" x="107" y="387.5" width="200" height="50"/>
                                 <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="6Dd-3r-AFP"/>
@@ -118,8 +118,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="gYM-ZO-jNB" firstAttribute="trailing" secondItem="Xjs-fF-Hpl" secondAttribute="trailing" constant="20" id="42L-bO-v8d"/>
-                            <constraint firstItem="lq2-3d-2ZG" firstAttribute="top" secondItem="Xjs-fF-Hpl" secondAttribute="bottom" constant="10" id="G0e-fZ-fef"/>
+                            <constraint firstItem="lq2-3d-2ZG" firstAttribute="top" secondItem="Xjs-fF-Hpl" secondAttribute="bottom" constant="20" id="G0e-fZ-fef"/>
                             <constraint firstItem="Xjs-fF-Hpl" firstAttribute="leading" secondItem="gYM-ZO-jNB" secondAttribute="leading" constant="20" id="L5G-KW-hW6"/>
+                            <constraint firstItem="gYM-ZO-jNB" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="lq2-3d-2ZG" secondAttribute="bottom" constant="10" id="NBB-yY-sg2"/>
                             <constraint firstItem="LTH-ky-xeu" firstAttribute="leading" secondItem="gYM-ZO-jNB" secondAttribute="leading" constant="20" id="bon-GU-5oB"/>
                             <constraint firstItem="lq2-3d-2ZG" firstAttribute="centerX" secondItem="p81-ax-RLM" secondAttribute="centerX" id="cAv-3V-pEX"/>
                             <constraint firstItem="gYM-ZO-jNB" firstAttribute="trailing" secondItem="LTH-ky-xeu" secondAttribute="trailing" constant="20" id="dh5-4J-jpa"/>
@@ -249,7 +250,6 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="collectionView" destination="Wyv-VR-6Ej" id="RhQ-NM-ZJQ"/>
-                        <segue destination="oj0-iy-ucn" kind="push" identifier="detailsSegue" id="5BL-Lr-rAv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

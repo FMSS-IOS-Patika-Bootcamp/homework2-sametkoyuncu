@@ -7,10 +7,6 @@
 
 import UIKit
 
-protocol NewsViewControllerDelegate {
-    func didNewsSelected(_ news: News)
-}
-
 class NewsViewController: UIViewController {
     // outlets
     @IBOutlet weak var collectionView: UICollectionView!
@@ -25,8 +21,6 @@ class NewsViewController: UIViewController {
     
     var filteredNews: [News] = []
     
-    var delegate: NewsViewControllerDelegate?
-
     // lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,6 +75,10 @@ class NewsViewController: UIViewController {
         }
         
         collectionView.reloadData()
+        
+        // scroll to top
+        let topOffest = CGPoint(x: 0, y: -(self.collectionView?.contentInset.top ?? 0))
+        self.collectionView.setContentOffset(topOffest, animated: true)
     }
 }
 
@@ -90,12 +88,11 @@ extension NewsViewController: UICollectionViewDelegate {
         
         // target view controller
         let detailsViewController = self.storyboard?.instantiateViewController(withIdentifier: K.ViewController.Details) as! DetailsViewController
-        // set delegate
-        self.delegate = detailsViewController
+   
         // find selected news
         let news = filteredNews[indexPath.row]
         // set selected news
-        self.delegate?.didNewsSelected(news)
+        detailsViewController.selectedNews = news
         
         // go details screen
         navigationController?.pushViewController(detailsViewController, animated: true)

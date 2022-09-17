@@ -46,11 +46,4 @@ class DetailsViewController: UIViewController {
     }
 }
 
-// MARK: - news delegate method - get new from news screen using delagation
-extension DetailsViewController: NewsViewControllerDelegate {
-    func didNewsSelected(_ news: News) {
-        selectedNews = news
-    }
-}
-
 

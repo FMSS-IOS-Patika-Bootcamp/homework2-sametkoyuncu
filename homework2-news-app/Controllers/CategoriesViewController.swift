@@ -7,7 +7,7 @@
 
 import UIKit
 // MARK: - ödev de collection view veya table view kullanılması gerektiği yazıyor
-//         ben de her iki kullanabilmek için, kategoriler ekranını ekledim
+//         ben de her ikisini kullanabilmek için, kategoriler ekranını ekledim
 class CategoriesViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
