@@ -79,56 +79,71 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OrA-BH-jVj">
-                                <rect key="frame" x="0.0" y="88" width="414" height="220"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oSM-KT-xxM">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="sgj-Dz-kIb">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="364.5"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OrA-BH-jVj">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="220"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="220" id="L9a-Tq-hwx"/>
+                                                </constraints>
+                                            </imageView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="CeV-pM-MS4">
+                                                <rect key="frame" x="164.5" y="240" width="85" height="54.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Başlık" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LTH-ky-xeu">
+                                                        <rect key="frame" x="15" y="0.0" width="55" height="24"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="250" text="İçerik" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xjs-fF-Hpl">
+                                                        <rect key="frame" x="15" y="34" width="41.5" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <directionalEdgeInsets key="directionalLayoutMargins" top="0.0" leading="15" bottom="0.0" trailing="15"/>
+                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lq2-3d-2ZG">
+                                                <rect key="frame" x="107" y="314.5" width="200" height="50"/>
+                                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="200" id="6Dd-3r-AFP"/>
+                                                    <constraint firstAttribute="height" constant="50" id="8Fk-bA-jxs"/>
+                                                </constraints>
+                                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Devamını oku..">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="18"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="readMoreButtonPressed:" destination="oj0-iy-ucn" eventType="touchUpInside" id="n6l-PO-KNP"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="220" id="L9a-Tq-hwx"/>
+                                    <constraint firstItem="sgj-Dz-kIb" firstAttribute="top" secondItem="oSM-KT-xxM" secondAttribute="top" id="TZz-rC-jHT"/>
+                                    <constraint firstAttribute="trailing" secondItem="sgj-Dz-kIb" secondAttribute="trailing" id="bJA-pe-GIl"/>
+                                    <constraint firstAttribute="bottom" secondItem="sgj-Dz-kIb" secondAttribute="bottom" constant="16" id="fYr-4t-fLZ"/>
+                                    <constraint firstItem="sgj-Dz-kIb" firstAttribute="leading" secondItem="oSM-KT-xxM" secondAttribute="leading" id="vDf-yR-I6v"/>
                                 </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Başlık" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LTH-ky-xeu">
-                                <rect key="frame" x="20" y="318" width="374" height="24"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="250" text="İçerik" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xjs-fF-Hpl">
-                                <rect key="frame" x="20" y="347" width="374" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lq2-3d-2ZG">
-                                <rect key="frame" x="107" y="387.5" width="200" height="50"/>
-                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="6Dd-3r-AFP"/>
-                                    <constraint firstAttribute="height" constant="50" id="8Fk-bA-jxs"/>
-                                </constraints>
-                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Devamını oku..">
-                                    <fontDescription key="titleFontDescription" type="system" pointSize="18"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="readMoreButtonPressed:" destination="oj0-iy-ucn" eventType="touchUpInside" id="n6l-PO-KNP"/>
-                                </connections>
-                            </button>
+                            </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gYM-ZO-jNB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="gYM-ZO-jNB" firstAttribute="trailing" secondItem="Xjs-fF-Hpl" secondAttribute="trailing" constant="20" id="42L-bO-v8d"/>
-                            <constraint firstItem="lq2-3d-2ZG" firstAttribute="top" secondItem="Xjs-fF-Hpl" secondAttribute="bottom" constant="20" id="G0e-fZ-fef"/>
-                            <constraint firstItem="Xjs-fF-Hpl" firstAttribute="leading" secondItem="gYM-ZO-jNB" secondAttribute="leading" constant="20" id="L5G-KW-hW6"/>
-                            <constraint firstItem="gYM-ZO-jNB" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="lq2-3d-2ZG" secondAttribute="bottom" constant="10" id="NBB-yY-sg2"/>
-                            <constraint firstItem="LTH-ky-xeu" firstAttribute="leading" secondItem="gYM-ZO-jNB" secondAttribute="leading" constant="20" id="bon-GU-5oB"/>
-                            <constraint firstItem="lq2-3d-2ZG" firstAttribute="centerX" secondItem="p81-ax-RLM" secondAttribute="centerX" id="cAv-3V-pEX"/>
-                            <constraint firstItem="gYM-ZO-jNB" firstAttribute="trailing" secondItem="LTH-ky-xeu" secondAttribute="trailing" constant="20" id="dh5-4J-jpa"/>
-                            <constraint firstItem="OrA-BH-jVj" firstAttribute="leading" secondItem="gYM-ZO-jNB" secondAttribute="leading" id="e1I-mo-MbK"/>
-                            <constraint firstItem="OrA-BH-jVj" firstAttribute="top" secondItem="gYM-ZO-jNB" secondAttribute="top" id="fQN-mf-fdB"/>
-                            <constraint firstItem="LTH-ky-xeu" firstAttribute="top" secondItem="OrA-BH-jVj" secondAttribute="bottom" constant="10" id="maw-Ke-XdG"/>
-                            <constraint firstItem="gYM-ZO-jNB" firstAttribute="trailing" secondItem="OrA-BH-jVj" secondAttribute="trailing" id="mhT-4z-Cii"/>
-                            <constraint firstItem="Xjs-fF-Hpl" firstAttribute="top" secondItem="LTH-ky-xeu" secondAttribute="bottom" constant="5" id="z7U-gP-Uma"/>
+                            <constraint firstItem="sgj-Dz-kIb" firstAttribute="width" secondItem="p81-ax-RLM" secondAttribute="width" id="9m2-VV-fIC"/>
+                            <constraint firstAttribute="bottom" secondItem="oSM-KT-xxM" secondAttribute="bottom" id="MNQ-jp-91W"/>
+                            <constraint firstItem="oSM-KT-xxM" firstAttribute="top" secondItem="gYM-ZO-jNB" secondAttribute="top" id="NK8-pU-7Sb"/>
+                            <constraint firstItem="oSM-KT-xxM" firstAttribute="leading" secondItem="gYM-ZO-jNB" secondAttribute="leading" id="hLI-Bw-I7x"/>
+                            <constraint firstItem="oSM-KT-xxM" firstAttribute="trailing" secondItem="gYM-ZO-jNB" secondAttribute="trailing" id="tMq-n4-k5E"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Details Page" id="Ize-Hr-z1S">
