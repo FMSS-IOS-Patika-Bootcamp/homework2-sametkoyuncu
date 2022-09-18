@@ -8,7 +8,7 @@
 struct K {
     
     static let logo = "logo"
-    static let categoryLogo = "categoryLogo"
+    static let categoryLogo = "categorylogo"
     
     // notification center IDs
     struct Notification {
